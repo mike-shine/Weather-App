@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/mike-shine/Weather-App/issues"
   },
-  "homepage": "https://github.com/mike-shine/Weather-App#readme"
+  "homepage": "https://github.com/mike-shine/Weather-App#readme",
+  "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
 }
