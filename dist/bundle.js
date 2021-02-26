@@ -16,7 +16,7 @@
   \*******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiKey\": () => (/* binding */ apiKey)\n/* harmony export */ });\nconst apiKey = '7f944555d8ad32f1ca731f0076de5e64';\n\n\n\n//# sourceURL=webpack://weather-app/./apiKey.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiKey\": () => (/* binding */ apiKey)\n/* harmony export */ });\nvar apiKey = '7f944555d8ad32f1ca731f0076de5e64';\n\n\n//# sourceURL=webpack://weather-app/./apiKey.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apiKey.js */ \"./apiKey.js\");\n\n\nconsole.log(_apiKey_js__WEBPACK_IMPORTED_MODULE_0__.apiKey);\n\n// write functions that hit API\n  // should be able to take a location (city) and return weather data for that location\n  // just console.log for now\n\n\n\n//# sourceURL=webpack://weather-app/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apiKey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../apiKey.js */ \"./apiKey.js\");\n\n\nfunction getWeather() {\n  var city = prompt('Please enter a city');\n  fetch(\"https://api.openweathermap.org/data/2.5/weather?q=\".concat(city, \"&appid=\").concat(_apiKey_js__WEBPACK_IMPORTED_MODULE_0__.apiKey), {\n    mode: 'cors'\n  }).then(function (response) {\n    return response.json();\n  }).then(function (data) {\n    console.log(data);\n  });\n}\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  getWeather();\n}); // write functions that hit API\n// should be able to take a location (city) and return weather data for that location\n// just console.log for now\n\n//# sourceURL=webpack://weather-app/./src/app.js?");
 
 /***/ })
 
