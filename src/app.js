@@ -1,9 +1,9 @@
 import {apiKey} from '../apiKey.js';
 
 async function getWeather() {
-
-    let city = prompt('Please enter a city');
-    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`, {mode: 'cors'});
+    let city = document.querySelector('#city');
+    // let city = prompt('Please enter a city');
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value.toString()}&appid=${apiKey}&units=imperial`, {mode: 'cors'});
     let weatherData = await response.json();
     let relevantWeatherData = {
       location: weatherData.name,
@@ -13,10 +13,22 @@ async function getWeather() {
     console.table(relevantWeatherData);
 };
 
+let userInput = document.querySelector('#city');
+let searchBar = document.querySelector('#submit');
 
-window.addEventListener('DOMContentLoaded', () => {
+searchBar.addEventListener('click', function(e) {
+  // e.preventDefault();
+  console.log(userInput.value);
   getWeather();
-});
+})
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+
+//   async function showWeather(city) {
+//     getWeather(city);
+//   }
+// });
 
 
     // .then(function(response) {
