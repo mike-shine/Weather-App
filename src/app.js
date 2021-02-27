@@ -17,7 +17,7 @@ let userInput = document.querySelector('#city');
 let searchBar = document.querySelector('#submit');
 
 searchBar.addEventListener('click', function(e) {
-  // e.preventDefault();
+  e.preventDefault();
   console.log(userInput.value);
   getWeather();
 })
