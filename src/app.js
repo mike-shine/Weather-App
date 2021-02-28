@@ -31,6 +31,9 @@ forecast.style.border = '2px solid red';
 weatherDataContainer.appendChild(forecast);
 
 function determineTempRange(temperature, body) {
+  if (body.classList.length > 0) {
+    body.classList = [];
+  }
   let temp = Number(temperature);
   if (temp < 11) {
     body.classList.add('coldest');
