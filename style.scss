@@ -1,21 +1,25 @@
-$coldest : (to right, midnightblue, darkblue); // 11-
-$really-cold : (to right, darkblue, darkslateblue); // 12-23
-$very-cold : (to right, navy, royalblue); // 24-35
-$kinda-cold : (to right, dodgerblue, deepskyblue); // 36-47
-$chilly : (to right, skyblue, lightskyblue); // 48-59
-$mild : (to right, paleturquoise, lemonchiffon); // 60-70
-$warm : (to right, wheat, sandybrown); // 71-77
-$kinda-hot : (to right, lightsalmon, coral); // 78-85
-$very-hot : (to right, tomato, orangered); // 86-93
-$really-hot : (to right, indianred, crimson); // 94-100
-$hottest : (to right, firebrick, darkred); // 101+
+$coldest : linear-gradient(to right, rgb(7, 7, 31), darkblue); // 11-
+$really-cold : linear-gradient(to right, darkblue, darkslateblue); // 12-23
+$very-cold : linear-gradient(to right, navy, royalblue); // 24-35
+$kinda-cold : linear-gradient(to right, dodgerblue, deepskyblue); // 36-47
+$chilly : linear-gradient(to right, skyblue, lightskyblue); // 48-59
+$mild : linear-gradient(to right, paleturquoise, lemonchiffon); // 60-70
+$warm : linear-gradient(to right, wheat, sandybrown); // 71-77
+$kinda-hot : linear-gradient(to right, lightsalmon, coral); // 78-85
+$very-hot : linear-gradient(to right, tomato, orangered); // 86-93
+$really-hot : linear-gradient(to right, indianred, crimson); // 94-100
+$hottest : linear-gradient(to right, firebrick, darkred); // 101+
 
 * {
   font-family: 'Josefin Sans';
-  background-image: linear-gradient($warm);
+
+}
+
+body {
+  background-image: $kinda-cold;
 }
 
 .coldest {
-  background: linear-gradient($coldest);
+  background: $coldest;
 }
 

@@ -1,10 +1,13 @@
 * {
   font-family: "Josefin Sans";
-  background-image: linear-gradient(to right, wheat, sandybrown);
+}
+
+body {
+  background-image: linear-gradient(to right, dodgerblue, deepskyblue);
 }
 
 .coldest {
-  background: linear-gradient(to right, midnightblue, darkblue);
+  background: linear-gradient(to right, #07071f, darkblue);
 }
 
 /*# sourceMappingURL=style.css.map */

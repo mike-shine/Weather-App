@@ -2,10 +2,28 @@ import {apiKey} from '../apiKey.js';
 
 
 const weatherDataContainer = document.createElement('div');
-weatherDataContainer.style.width = '300px';
-weatherDataContainer.style.height = '300px';
+weatherDataContainer.style.width = '305px';
+weatherDataContainer.style.height = '315px';
 weatherDataContainer.style.border = '3px dotted';
 document.body.appendChild(weatherDataContainer);
+
+const location = document.createElement('div');
+location.style.width = '300px';
+location.style.height = '100px';
+location.style.border = '2px solid yellow';
+weatherDataContainer.appendChild(location);
+
+const temperature = document.createElement('div');
+temperature.style.width = '300px';
+temperature.style.height = '100px';
+temperature.style.border = '2px solid green';
+weatherDataContainer.appendChild(temperature);
+
+const forecast = document.createElement('div');
+forecast.style.width = '300px';
+forecast.style.height = '100px';
+forecast.style.border = '2px solid red';
+weatherDataContainer.appendChild(forecast);
 
 
 
