@@ -30,6 +30,33 @@ forecast.style.border = '2px solid red';
 // forecast.textContent = fore;
 weatherDataContainer.appendChild(forecast);
 
+function determineTempRange(temperature, body) {
+  let temp = Number(temperature);
+  if (temp < 11) {
+    body.classList.add('coldest');
+  } else if (temp >= 11 && temp < 23) {
+    body.classList.add('reallyCold');
+  } else if (temp >= 23 && temp < 35) {
+    body.classList.add('veryCold');
+  } else if (temp >= 35 && temp < 47) {
+    body.classList.add('kindaCold');
+  } else if (temp >= 47 && temp < 59) {
+    body.classList.add('chilly');
+  } else if (temp >= 59 && temp < 70) {
+    body.classList.add('mild');
+  } else if (temp >= 70 && temp < 77) {
+    body.classList.add('warm');
+  } else if (temp >= 77 && temp < 85) {
+    body.classList.add('kindaHot');
+  } else if (temp >= 85 && temp < 93) {
+    body.classList.add('veryHot');
+  } else if (temp >= 93 && temp < 100) {
+    body.classList.add('reallyHot');
+  } else if (temp >= 100 ) {
+    body.classList.add('hottest');
+  }
+}
+
 
 
 async function getWeather() {
@@ -42,6 +69,7 @@ async function getWeather() {
       weather: weatherData.weather[0].description
     }
     console.table(relevantWeatherData);
+    determineTempRange(weatherData.main.temp, document.body);
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;

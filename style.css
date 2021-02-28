@@ -10,4 +10,44 @@ body {
   background: linear-gradient(to right, #07071f, darkblue);
 }
 
+.reallyCold {
+  background: linear-gradient(to right, darkblue, darkslateblue);
+}
+
+.veryCold {
+  background: linear-gradient(to right, navy, royalblue);
+}
+
+.kindaCold {
+  background: linear-gradient(to right, dodgerblue, deepskyblue);
+}
+
+.chilly {
+  background: linear-gradient(to right, skyblue, lightskyblue);
+}
+
+.mild {
+  background: linear-gradient(to right, paleturquoise, lemonchiffon);
+}
+
+.warm {
+  background: linear-gradient(to right, wheat, sandybrown);
+}
+
+.kindaHot {
+  background: linear-gradient(to right, lightsalmon, coral);
+}
+
+.veryHot {
+  background: linear-gradient(to right, tomato, orangered);
+}
+
+.reallyHot {
+  background: linear-gradient(to right, indianred, crimson);
+}
+
+.hottest {
+  background: linear-gradient(to right, firebrick, darkred);
+}
+
 /*# sourceMappingURL=style.css.map */
