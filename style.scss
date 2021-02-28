@@ -1,11 +1,21 @@
-$coldest : (midnightblue, darkblue);
-$really-cold : (darkblue, darkslateblue);
-$very-cold : (navy, royalblue);
-$kinda-cold : (dodgerblue, deepskyblue);
-$chilly : (skyblue, lightskyblue);
-$mild : (paleturquoise, lemonchiffon);
-$warm : (wheat, sandybrown);
-$kinda-hot : (lightsalmon, coral);
-$very-hot : (tomato, orangered);
-$really-hot : (indianred, crimson);
-$hottest : (firebrick, darkred);
+$coldest : (to right, midnightblue, darkblue); // 11-
+$really-cold : (to right, darkblue, darkslateblue); // 12-23
+$very-cold : (to right, navy, royalblue); // 24-35
+$kinda-cold : (to right, dodgerblue, deepskyblue); // 36-47
+$chilly : (to right, skyblue, lightskyblue); // 48-59
+$mild : (to right, paleturquoise, lemonchiffon); // 60-70
+$warm : (to right, wheat, sandybrown); // 71-77
+$kinda-hot : (to right, lightsalmon, coral); // 78-85
+$very-hot : (to right, tomato, orangered); // 86-93
+$really-hot : (to right, indianred, crimson); // 94-100
+$hottest : (to right, firebrick, darkred); // 101+
+
+* {
+  font-family: 'Josefin Sans';
+  background-image: linear-gradient($warm);
+}
+
+.coldest {
+  background: linear-gradient($coldest);
+}
+
