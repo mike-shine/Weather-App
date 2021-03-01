@@ -30,10 +30,11 @@ forecast.style.border = '2px solid red';
 // forecast.textContent = fore;
 weatherDataContainer.appendChild(forecast);
 
-const relevantGif = document.createElement('div');
+const relevantGif = document.createElement('img');
 relevantGif.style.width = '300px';
 relevantGif.style.height = '350px';
 relevantGif.style.border = '2px solid white';
+// relevantGif.src = gifSrc;
 weatherDataContainer.appendChild(relevantGif);
 
 function determineTempRange(temperature, body) {
@@ -83,6 +84,8 @@ async function getWeather() {
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;
     // relevantGif.appendChild(getGif(document.body));
+    gifSrc = getGif(document.body);
+    relevantGif.src = gifSrc;
 };
 
 async function getGif(body) {
@@ -96,6 +99,7 @@ async function getGif(body) {
 
 let userInput = document.querySelector('#city');
 let searchBar = document.querySelector('#submit');
+let gifSrc;
 
 searchBar.addEventListener('click', function(e) {
   e.preventDefault();
