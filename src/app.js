@@ -79,13 +79,19 @@ async function getWeather() {
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;
-    gifSrc = getGif(document.body);
+    gifSrc = await getGif(document.body);
+    // relevantGif.crossorigin = '';
     relevantGif.src = gifSrc;
 };
 
 async function getGif(body) {
   let queryString = body.classList[0];
-  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${queryString}`);
+  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${queryString}`, {
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'image/gif'
+    }
+  });
   let gif = await response.json();
   console.log(gif);
   return gif.data.url;
