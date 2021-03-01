@@ -1,11 +1,11 @@
-import {weatherApiKey} from '../apiKey.js';
+import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 
 let loc, temp, fore;
 
 
 const weatherDataContainer = document.createElement('div');
 weatherDataContainer.style.width = '305px';
-weatherDataContainer.style.height = '315px';
+weatherDataContainer.style.height = '750px';
 weatherDataContainer.style.border = '3px dotted';
 document.body.appendChild(weatherDataContainer);
 
@@ -30,13 +30,19 @@ forecast.style.border = '2px solid red';
 // forecast.textContent = fore;
 weatherDataContainer.appendChild(forecast);
 
+const relevantGif = document.createElement('div');
+relevantGif.style.width = '300px';
+relevantGif.style.height = '350px';
+relevantGif.style.border = '2px solid white';
+weatherDataContainer.appendChild(relevantGif);
+
 function determineTempRange(temperature, body) {
   if (body.classList.length > 0) {
     body.classList = [];
   }
   let temp = Number(temperature);
   if (temp < 11) {
-    body.classList.add('coldest');
+    body.classList.add('freezing');
   } else if (temp >= 11 && temp < 23) {
     body.classList.add('reallyCold');
   } else if (temp >= 23 && temp < 35) {
@@ -56,7 +62,7 @@ function determineTempRange(temperature, body) {
   } else if (temp >= 93 && temp < 100) {
     body.classList.add('reallyHot');
   } else if (temp >= 100 ) {
-    body.classList.add('hottest');
+    body.classList.add('onFire');
   }
 }
 
@@ -76,7 +82,17 @@ async function getWeather() {
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;
+    // relevantGif.appendChild(getGif(document.body));
 };
+
+async function getGif(body) {
+  // let tempRange = body.classList[0];
+  let tempRange = 'snow';
+  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${tempRange}`);
+  let gif = await response.json();
+  console.log(gif);
+  return gif.data.bitly_gif_url;
+}
 
 let userInput = document.querySelector('#city');
 let searchBar = document.querySelector('#submit');

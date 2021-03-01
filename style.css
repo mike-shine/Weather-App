@@ -2,11 +2,7 @@
   font-family: "Josefin Sans";
 }
 
-body {
-  background-image: linear-gradient(to right, dodgerblue, deepskyblue);
-}
-
-.coldest {
+.freezing {
   background: linear-gradient(to right, #07071f, darkblue);
   color: aliceblue;
 }
@@ -49,7 +45,7 @@ body {
   background: linear-gradient(to right, indianred, crimson);
 }
 
-.hottest {
+.onFire {
   background: linear-gradient(to right, firebrick, darkred);
 }
 
