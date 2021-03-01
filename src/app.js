@@ -13,28 +13,24 @@ const location = document.createElement('div');
 location.style.width = '300px';
 location.style.height = '100px';
 location.style.border = '2px solid yellow';
-// location.textContent = loc;
 weatherDataContainer.appendChild(location);
 
 const temperature = document.createElement('div');
 temperature.style.width = '300px';
 temperature.style.height = '100px';
 temperature.style.border = '2px solid green';
-// temperature.textContent = temp;
 weatherDataContainer.appendChild(temperature);
 
 const forecast = document.createElement('div');
 forecast.style.width = '300px';
 forecast.style.height = '100px';
 forecast.style.border = '2px solid red';
-// forecast.textContent = fore;
 weatherDataContainer.appendChild(forecast);
 
 const relevantGif = document.createElement('img');
 relevantGif.style.width = '300px';
 relevantGif.style.height = '350px';
 relevantGif.style.border = '2px solid white';
-// relevantGif.src = gifSrc;
 weatherDataContainer.appendChild(relevantGif);
 
 function determineTempRange(temperature, body) {
@@ -53,7 +49,7 @@ function determineTempRange(temperature, body) {
   } else if (temp >= 45 && temp < 59) {
     body.classList.add('chilly');
   } else if (temp >= 59 && temp < 70) {
-    body.classList.add('mild');
+    body.classList.add('perfectWeather');
   } else if (temp >= 70 && temp < 75) {
     body.classList.add('warm');
   } else if (temp >= 75 && temp < 81) {
@@ -83,18 +79,16 @@ async function getWeather() {
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;
-    // relevantGif.appendChild(getGif(document.body));
     gifSrc = getGif(document.body);
     relevantGif.src = gifSrc;
 };
 
 async function getGif(body) {
-  // let tempRange = body.classList[0];
-  let tempRange = 'snow';
-  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${tempRange}`);
+  let queryString = body.classList[0];
+  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${queryString}`);
   let gif = await response.json();
   console.log(gif);
-  return gif.data.bitly_gif_url;
+  return gif.data.url;
 }
 
 let userInput = document.querySelector('#city');

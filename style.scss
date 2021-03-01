@@ -3,7 +3,7 @@ $really-cold : linear-gradient(to right, darkblue, darkslateblue);
 $very-cold : linear-gradient(to right, navy, royalblue);
 $kinda-cold : linear-gradient(to right, dodgerblue, deepskyblue);
 $chilly : linear-gradient(to right, skyblue, lightskyblue);
-$mild : linear-gradient(to right, paleturquoise, lemonchiffon);
+$perfect-weather : linear-gradient(to right, paleturquoise, lemonchiffon);
 $warm : linear-gradient(to right, wheat, sandybrown);
 $kinda-hot : linear-gradient(to right, lightsalmon, coral);
 $very-hot : linear-gradient(to right, tomato, orangered);
@@ -38,8 +38,8 @@ $on-fire : linear-gradient(to right, firebrick, darkred);
   background: $chilly;
 }
 
-.mild {
-  background: $mild;
+.perfectWeather {
+  background: $perfect-weather;
 }
 
 .warm {
