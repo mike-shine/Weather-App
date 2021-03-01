@@ -41,27 +41,27 @@ function determineTempRange(temperature, body) {
     body.classList = [];
   }
   let temp = Number(temperature);
-  if (temp < 11) {
+  if (temp < 0) {
     body.classList.add('freezing');
-  } else if (temp >= 11 && temp < 23) {
+  } else if (temp >= 0 && temp < 15) {
     body.classList.add('reallyCold');
-  } else if (temp >= 23 && temp < 35) {
+  } else if (temp >= 15 && temp < 30) {
     body.classList.add('veryCold');
-  } else if (temp >= 35 && temp < 47) {
+  } else if (temp >= 30 && temp < 45) {
     body.classList.add('kindaCold');
-  } else if (temp >= 47 && temp < 59) {
+  } else if (temp >= 45 && temp < 59) {
     body.classList.add('chilly');
   } else if (temp >= 59 && temp < 70) {
     body.classList.add('mild');
-  } else if (temp >= 70 && temp < 77) {
+  } else if (temp >= 70 && temp < 75) {
     body.classList.add('warm');
-  } else if (temp >= 77 && temp < 85) {
+  } else if (temp >= 75 && temp < 81) {
     body.classList.add('kindaHot');
-  } else if (temp >= 85 && temp < 93) {
+  } else if (temp >= 81 && temp < 88) {
     body.classList.add('veryHot');
-  } else if (temp >= 93 && temp < 100) {
+  } else if (temp >= 88 && temp < 93) {
     body.classList.add('reallyHot');
-  } else if (temp >= 100 ) {
+  } else if (temp >= 93) {
     body.classList.add('onFire');
   }
 }
