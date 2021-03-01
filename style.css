@@ -8,14 +8,17 @@ body {
 
 .coldest {
   background: linear-gradient(to right, #07071f, darkblue);
+  color: aliceblue;
 }
 
 .reallyCold {
   background: linear-gradient(to right, darkblue, darkslateblue);
+  color: aliceblue;
 }
 
 .veryCold {
   background: linear-gradient(to right, navy, royalblue);
+  color: aliceblue;
 }
 
 .kindaCold {
