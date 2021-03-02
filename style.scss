@@ -12,7 +12,16 @@ $on-fire : linear-gradient(to right, firebrick, darkred);
 
 * {
   font-family: 'Josefin Sans';
+  font-size: 24px;;
+}
 
+input{
+  height: 50px;
+}
+
+#submit {
+  width: 125px;
+  height: 50px;
 }
 
 .freezing {

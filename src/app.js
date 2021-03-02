@@ -63,7 +63,7 @@ function determineTempRange(temperature, body) {
   }
 }
 
-
+/* asynchronous function that fetches weather from openWeather API */
 
 async function getWeather() {
     let city = document.querySelector('#city');
