@@ -65,6 +65,8 @@ input {
 #bodyContent {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,9 +6,11 @@ let loc, temp, fore;
 
 const body = document.body;
 body.setAttribute('id', 'bodyContent');
+body.style.border = '3px dotted cyan';
 
-const inputContainer = document.createElement('div');
-inputContainer.setAttribute('id', 'inputContainer');
+const inputContainer = document.getElementById('inputContainer');
+inputContainer.style.border = '2px dotted chartreuse'
+body.appendChild(inputContainer);
 
 
 const weatherDataContainer = document.createElement('div');
