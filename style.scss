@@ -1,3 +1,5 @@
+/* background color gradients  */
+
 $freezing : linear-gradient(to right, rgb(7, 7, 31), darkblue);
 $really-cold : linear-gradient(to right, darkblue, darkslateblue);
 $very-cold : linear-gradient(to right, navy, royalblue);
@@ -9,20 +11,6 @@ $kinda-hot : linear-gradient(to right, lightsalmon, coral);
 $very-hot : linear-gradient(to right, tomato, orangered);
 $really-hot : linear-gradient(to right, indianred, crimson);
 $on-fire : linear-gradient(to right, firebrick, darkred);
-
-* {
-  font-family: 'Josefin Sans';
-  font-size: 24px;;
-}
-
-input{
-  height: 50px;
-}
-
-#submit {
-  width: 125px;
-  height: 50px;
-}
 
 .freezing {
   background: $freezing;
@@ -70,4 +58,34 @@ input{
 .onFire {
   background: $on-fire;
 }
+
+
+
+
+
+/* General styling */
+
+
+* {
+  font-family: 'Josefin Sans';
+  font-size: 24px;;
+}
+
+input{
+  height: 50px;
+}
+
+#submit {
+  width: 125px;
+  height: 50px;
+}
+
+
+/* flexbox */
+
+#weatherDataContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 

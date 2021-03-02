@@ -4,12 +4,16 @@ import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 
 let loc, temp, fore;
 
+const body = document.body;
+body.setAttribute('id', 'bodyContent');
+
 
 const weatherDataContainer = document.createElement('div');
+weatherDataContainer.setAttribute('id', 'weatherDataContainer');
 weatherDataContainer.style.width = '305px';
 weatherDataContainer.style.height = '750px';
 weatherDataContainer.style.border = '3px dotted';
-document.body.appendChild(weatherDataContainer);
+body.appendChild(weatherDataContainer);
 
 const location = document.createElement('div');
 location.style.width = '300px';
@@ -83,11 +87,11 @@ async function getWeather() {
       weather: weatherData.weather[0].description
     }
     console.table(relevantWeatherData);
-    determineTempRange(weatherData.main.temp, document.body);
+    determineTempRange(weatherData.main.temp, body);
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
     forecast.textContent = weatherData.weather[0].description;
-    gifSrc = await getGif(document.body);
+    gifSrc = await getGif(body);
     // relevantGif.crossorigin = '';
     relevantGif.src = gifSrc;
 };

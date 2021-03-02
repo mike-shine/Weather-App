@@ -1,17 +1,4 @@
-* {
-  font-family: "Josefin Sans";
-  font-size: 24px;
-}
-
-input {
-  height: 50px;
-}
-
-#submit {
-  width: 125px;
-  height: 50px;
-}
-
+/* background color gradients  */
 .freezing {
   background: linear-gradient(to right, #07071f, darkblue);
   color: aliceblue;
@@ -57,6 +44,27 @@ input {
 
 .onFire {
   background: linear-gradient(to right, firebrick, darkred);
+}
+
+/* General styling */
+* {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+}
+
+input {
+  height: 50px;
+}
+
+#submit {
+  width: 125px;
+  height: 50px;
+}
+
+/* flexbox */
+#weatherDataContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */
