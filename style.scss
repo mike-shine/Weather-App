@@ -115,7 +115,36 @@ input{
   bottom: 0;
   background-color: #ccc;
   transition: .4s;
+
+  input:checked {
+    background-color: #2196F3;
+  }
+
+  input:focus {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  .round {
+    border-radius: 34px;
+  }
+
+  .round:before {
+    border-radius: 50%;
+  }
 }
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+
 
 
 

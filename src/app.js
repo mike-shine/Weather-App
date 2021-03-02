@@ -44,17 +44,21 @@ relevantGif.style.height = '350px';
 relevantGif.style.border = '2px solid white';
 weatherDataContainer.appendChild(relevantGif);
 
+
+
+
 /* Farenheit/Celsius toggle switch */
 
 const toggleSwitchContainer = document.createElement('label');
 toggleSwitchContainer.classList.add('switch');
+temperature.appendChild(toggleSwitchContainer);
 
 const unitToggleSwitch = document.createElement('input');
 unitToggleSwitch.setAttribute('type', 'checkbox');
 toggleSwitchContainer.appendChild(unitToggleSwitch);
 
 const slider = document.createElement('span');
-slider.classList.add('slider');
+slider.classList.add('slider', 'round');
 toggleSwitchContainer.appendChild(slider);
 
 
