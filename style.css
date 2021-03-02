@@ -62,7 +62,7 @@ input {
 }
 
 /* flexbox */
-#weatherDataContainer {
+#bodyContent {
   display: flex;
   flex-wrap: wrap;
 }

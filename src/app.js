@@ -7,6 +7,9 @@ let loc, temp, fore;
 const body = document.body;
 body.setAttribute('id', 'bodyContent');
 
+const inputContainer = document.createElement('div');
+inputContainer.setAttribute('id', 'inputContainer');
+
 
 const weatherDataContainer = document.createElement('div');
 weatherDataContainer.setAttribute('id', 'weatherDataContainer');
