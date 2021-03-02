@@ -3,7 +3,7 @@ import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 /* Structural/DOM components */
 
 let loc, temp, fore;
-let isCelsius = true;
+let isCelsius = false;
 
 function tempUnit() {
   return Boolean(isCelsius)
@@ -171,6 +171,14 @@ let gifSrc;
 
 searchBar.addEventListener('click', function(e) {
   e.preventDefault();
+  getWeather();
+});
+
+toggleSwitchContainer.addEventListener('click', function() {
+  // isCelsius = !isCelsius;
+  Boolean(isCelsius)
+  ? isCelsius = false
+  : isCelsius = true;
   getWeather();
 })
 
