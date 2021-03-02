@@ -1,5 +1,7 @@
 import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 
+/* Structural/DOM components */
+
 let loc, temp, fore;
 
 
@@ -33,6 +35,9 @@ relevantGif.style.height = '350px';
 relevantGif.style.border = '2px solid white';
 weatherDataContainer.appendChild(relevantGif);
 
+
+/* synchronous function that changes the background color gradient commensurate with the weather data fetched from the weather API  */
+
 function determineTempRange(temperature, body) {
   if (body.classList.length > 0) {
     body.classList = [];
@@ -63,6 +68,9 @@ function determineTempRange(temperature, body) {
   }
 }
 
+
+
+
 /* asynchronous function that fetches weather from openWeather API */
 
 async function getWeather() {
@@ -83,6 +91,13 @@ async function getWeather() {
     // relevantGif.crossorigin = '';
     relevantGif.src = gifSrc;
 };
+
+
+
+
+
+
+/* asynchronous function that fetches a gif from Giphy API  */
 
 async function getGif(body) {
   let queryString = body.classList[0];
