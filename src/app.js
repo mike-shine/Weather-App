@@ -44,6 +44,22 @@ relevantGif.style.height = '350px';
 relevantGif.style.border = '2px solid white';
 weatherDataContainer.appendChild(relevantGif);
 
+/* Farenheit/Celsius toggle switch */
+
+const toggleSwitchContainer = document.createElement('label');
+toggleSwitchContainer.classList.add('switch');
+
+const unitToggleSwitch = document.createElement('input');
+unitToggleSwitch.setAttribute('type', 'checkbox');
+toggleSwitchContainer.appendChild(unitToggleSwitch);
+
+const slider = document.createElement('span');
+slider.classList.add('slider');
+toggleSwitchContainer.appendChild(slider);
+
+
+
+
 
 /* synchronous function that changes the background color gradient commensurate with the weather data fetched from the weather API  */
 
