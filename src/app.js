@@ -3,6 +3,13 @@ import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 /* Structural/DOM components */
 
 let loc, temp, fore;
+let isCelsius = true;
+
+function tempUnit() {
+  return Boolean(isCelsius)
+  ? 'metric'
+  : 'imperial';
+}
 
 const body = document.body;
 body.setAttribute('id', 'bodyContent');
@@ -121,7 +128,7 @@ function determineTempRange(temperature, body) {
 
 async function getWeather() {
     let city = document.querySelector('#city');
-    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value.toString()}&appid=${weatherApiKey}&units=imperial`, {mode: 'cors'});
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value.toString()}&appid=${weatherApiKey}&units=${tempUnit()}`, {mode: 'cors'});
     let weatherData = await response.json();
     let relevantWeatherData = {
       location: weatherData.name,
