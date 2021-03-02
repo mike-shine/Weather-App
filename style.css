@@ -92,17 +92,17 @@ input {
   background-color: #ccc;
   transition: 0.4s;
 }
-.slider input:checked {
+
+input:checked + .slider {
   background-color: #2196F3;
 }
-.slider input:focus {
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
-}
-.slider .round {
-  border-radius: 34px;
-}
-.slider .round:before {
-  border-radius: 50%;
 }
 
 .slider:before {
@@ -114,6 +114,14 @@ input {
   bottom: 4px;
   background-color: white;
   transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
