@@ -63,6 +63,18 @@ toggleSwitchContainer.appendChild(slider);
 
 
 
+/* Farenheit/Celsius toggle function  */
+
+function toggleUnit(temp) {
+  if (temp.unit === 'farenheit') {
+    return (Number(temp) - 32) * (5 / 9);
+  } else if (temp.unit === 'celsius') {
+    return (Number(temp * (9 / 5))) + 32;
+  }
+
+}
+
+
 
 
 /* synchronous function that changes the background color gradient commensurate with the weather data fetched from the weather API  */
