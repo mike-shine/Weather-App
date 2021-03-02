@@ -69,6 +69,10 @@ input {
   align-content: center;
 }
 
+#inputContainer {
+  display: flex;
+}
+
 /* toggle switch */
 .switch {
   position: relative;

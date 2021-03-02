@@ -9,6 +9,7 @@ body.setAttribute('id', 'bodyContent');
 body.style.border = '3px dotted cyan';
 
 const inputContainer = document.getElementById('inputContainer');
+inputContainer.setAttribute('id', 'inputContainer');
 inputContainer.style.border = '2px dotted chartreuse'
 body.appendChild(inputContainer);
 
@@ -51,7 +52,7 @@ weatherDataContainer.appendChild(relevantGif);
 
 const toggleSwitchContainer = document.createElement('label');
 toggleSwitchContainer.classList.add('switch');
-temperature.appendChild(toggleSwitchContainer);
+inputContainer.appendChild(toggleSwitchContainer);
 
 const unitToggleSwitch = document.createElement('input');
 unitToggleSwitch.setAttribute('type', 'checkbox');
@@ -71,8 +72,12 @@ function toggleUnit(temp) {
   } else if (temp.unit === 'celsius') {
     return (Number(temp * (9 / 5))) + 32;
   }
-
 }
+
+// API fetches farenheit temp
+// create isCelsius var, which toggles with unit Toggle switch
+// add conditional in getWeather, checking isCelsius
+// depending on the result, the fetch request changes
 
 
 
