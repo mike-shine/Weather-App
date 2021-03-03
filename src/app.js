@@ -196,6 +196,7 @@ let gifSrc;
 searchBar.addEventListener('click', function(e) {
   e.preventDefault();
   getWeather();
+  userInput.value = '';
 });
 
 unitToggleSwitch.addEventListener('click', function() {
