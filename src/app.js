@@ -86,11 +86,13 @@ toggleSwitchContainer.appendChild(slider);
 /* Farenheit/Celsius toggle functions  */
 
 function convertToFarenheit(tempInCelsius) {
-  return (Number(tempInCelsius) * (9 / 5)) + 32;
+  let convertedValue =  (Number(tempInCelsius) * (9 / 5)) + 32;
+  return round(convertedValue, 1);
 }
 
 function convertToCelsius(tempInFarenheit) {
-  return (tempInFarenheit - 32) * (5 / 9);
+  let convertedValue = (Number(tempInFarenheit) - 32) * (5 / 9);
+  return round(convertedValue, 1);
 }
 
 function determineUnitAndConvert(temp) {
@@ -153,10 +155,15 @@ async function getWeather() {
     }
     console.table(relevantWeatherData);
     await determineTempRange(weatherData.main.temp, body);
+
     location.textContent = weatherData.name;
-    temperature.textContent = weatherData.main.temp;
+
+    let rawTempData = weatherData.main.temp;
+    temperature.textContent = round(Number(rawTempData), 1);
     appendCelsiusOrFarenheit();
+
     forecast.textContent = weatherData.weather[0].description;
+
     gifSrc = await getGif(body);
     // relevantGif.crossorigin = '';
     relevantGif.src = gifSrc;
