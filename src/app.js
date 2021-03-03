@@ -18,6 +18,11 @@ function appendCelsiusOrFarenheit() {
   }
 }
 
+function round(value, precision) {
+  var multiplier = Math.pow(10, precision || 1);
+  return Math.round(value * multiplier) / multiplier;
+}
+
 const body = document.body;
 body.setAttribute('id', 'bodyContent');
 body.style.border = '3px dotted cyan';
@@ -187,7 +192,6 @@ searchBar.addEventListener('click', function(e) {
 });
 
 unitToggleSwitch.addEventListener('click', function() {
-  console.log('hello world');
   if (isCelsius) {
     isCelsius = false;
     temperature.textContent = convertToFarenheit(temperature.textContent.slice(0, temperature.textContent.indexOf('°')));
