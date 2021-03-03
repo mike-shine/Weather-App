@@ -2,13 +2,20 @@ import {weatherApiKey, giphyApiKey} from '../apiKey.js';
 
 /* Structural/DOM components */
 
-let loc, temp, fore;
 let isCelsius = false;
 
 function tempUnit() {
   return Boolean(isCelsius)
   ? 'metric'
   : 'imperial';
+}
+
+function appendCelsiusOrFarenheit() {
+  if (isCelsius) {
+    temperature.textContent += '°C';
+  } else {
+    temperature.textContent += '°F';
+  }
 }
 
 const body = document.body;
@@ -71,20 +78,21 @@ toggleSwitchContainer.appendChild(slider);
 
 
 
-/* Farenheit/Celsius toggle function  */
+/* Farenheit/Celsius toggle functions  */
 
-function toggleUnit(temp) {
-  if (temp.unit === 'farenheit') {
-    return (Number(temp) - 32) * (5 / 9);
-  } else if (temp.unit === 'celsius') {
-    return (Number(temp * (9 / 5))) + 32;
-  }
+function convertToFarenheit(tempInCelsius) {
+  return (Number(tempInCelsius) * (9 / 5)) + 32;
 }
 
-// API fetches farenheit temp
-// create isCelsius var, which toggles with unit Toggle switch
-// add conditional in getWeather, checking isCelsius
-// depending on the result, the fetch request changes
+function convertToCelsius(tempInFarenheit) {
+  return (tempInFarenheit - 32) * (5 / 9);
+}
+
+function determineUnitAndConvert(temp) {
+  return Boolean(isCelsius)
+  ? convertToFarenheit(temp)
+  : convertToCelsius(temp);
+}
 
 
 
@@ -95,7 +103,10 @@ function determineTempRange(temperature, body) {
   if (body.classList.length > 0) {
     body.classList = [];
   }
-  let temp = Number(temperature);
+  let temp;
+  Boolean(isCelsius)
+  ? temp = convertToFarenheit(temperature)
+  : temp = Number(temperature);
   if (temp < 0) {
     body.classList.add('freezing');
   } else if (temp >= 0 && temp < 15) {
@@ -136,9 +147,10 @@ async function getWeather() {
       weather: weatherData.weather[0].description
     }
     console.table(relevantWeatherData);
-    determineTempRange(weatherData.main.temp, body);
+    await determineTempRange(weatherData.main.temp, body);
     location.textContent = weatherData.name;
     temperature.textContent = weatherData.main.temp;
+    appendCelsiusOrFarenheit();
     forecast.textContent = weatherData.weather[0].description;
     gifSrc = await getGif(body);
     // relevantGif.crossorigin = '';
@@ -174,14 +186,18 @@ searchBar.addEventListener('click', function(e) {
   getWeather();
 });
 
-toggleSwitchContainer.addEventListener('click', function() {
-  // isCelsius = !isCelsius;
-  Boolean(isCelsius)
-  ? isCelsius = false
-  : isCelsius = true;
-  getWeather();
-})
-
+unitToggleSwitch.addEventListener('click', function() {
+  console.log('hello world');
+  if (isCelsius) {
+    isCelsius = false;
+    temperature.textContent = convertToFarenheit(temperature.textContent.slice(0, temperature.textContent.indexOf('°')));
+    appendCelsiusOrFarenheit();
+  } else {
+    isCelsius = true;
+    temperature.textContent = convertToCelsius(temperature.textContent.slice(0, temperature.textContent.indexOf('°')));
+    appendCelsiusOrFarenheit();
+  }
+});
 
 
 

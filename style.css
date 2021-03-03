@@ -80,6 +80,7 @@ input {
   width: 60px;
   height: 34px;
 }
+
 .switch input {
   opacity: 0;
   width: 0;
@@ -122,10 +123,13 @@ input:focus + .slider {
 
 .slider.round {
   border-radius: 34px;
+  line-height: 30px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+  font-size: 18px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
