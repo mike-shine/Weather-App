@@ -25,11 +25,11 @@ function round(value, precision) {
 
 const body = document.body;
 body.setAttribute('id', 'bodyContent');
-body.style.border = '3px dotted cyan';
+// body.style.border = '3px dotted cyan';
 
 const inputContainer = document.getElementById('inputContainer');
 inputContainer.setAttribute('id', 'inputContainer');
-inputContainer.style.border = '2px dotted chartreuse'
+// inputContainer.style.border = '2px dotted chartreuse'
 body.appendChild(inputContainer);
 
 
@@ -37,32 +37,32 @@ const weatherDataContainer = document.createElement('div');
 weatherDataContainer.setAttribute('id', 'weatherDataContainer');
 weatherDataContainer.style.width = '305px';
 weatherDataContainer.style.height = '750px';
-weatherDataContainer.style.border = '3px dotted';
+// weatherDataContainer.style.border = '3px dotted';
 body.appendChild(weatherDataContainer);
 
 const location = document.createElement('div');
 location.style.width = '300px';
 location.style.height = '100px';
-location.style.border = '2px solid yellow';
+// location.style.border = '2px solid yellow';
 weatherDataContainer.appendChild(location);
 
 const temperature = document.createElement('div');
 temperature.style.width = '300px';
 temperature.style.height = '100px';
-temperature.style.border = '2px solid green';
+// temperature.style.border = '2px solid green';
 weatherDataContainer.appendChild(temperature);
 
 const forecast = document.createElement('div');
 forecast.style.width = '300px';
 forecast.style.height = '100px';
-forecast.style.border = '2px solid red';
+// forecast.style.border = '2px solid red';
 weatherDataContainer.appendChild(forecast);
 
-const relevantGif = document.createElement('img');
-relevantGif.style.width = '300px';
-relevantGif.style.height = '350px';
-relevantGif.style.border = '2px solid white';
-weatherDataContainer.appendChild(relevantGif);
+// const relevantGif = document.createElement('img');
+// relevantGif.style.width = '300px';
+// relevantGif.style.height = '350px';
+// relevantGif.style.border = '2px solid white';
+// weatherDataContainer.appendChild(relevantGif);
 
 
 
@@ -164,34 +164,12 @@ async function getWeather() {
 
     forecast.textContent = weatherData.weather[0].description;
 
-    gifSrc = await getGif(body);
-    // relevantGif.crossorigin = '';
-    relevantGif.src = gifSrc;
 };
 
 
-
-
-
-
-/* asynchronous function that fetches a gif from Giphy API  */
-
-async function getGif(body) {
-  let queryString = body.classList[0];
-  let response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=${queryString}`, {
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'image/gif'
-    }
-  });
-  let gif = await response.json();
-  console.log(gif);
-  return gif.data.url;
-}
-
 let userInput = document.querySelector('#city');
 let searchBar = document.querySelector('#submit');
-let gifSrc;
+
 
 searchBar.addEventListener('click', function(e) {
   e.preventDefault();
